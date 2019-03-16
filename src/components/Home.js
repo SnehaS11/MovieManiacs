@@ -36,7 +36,7 @@ export class Home extends Component {
     fetch(`https://api.themoviedb.org/3/movie/changes?api_key=${api_key}&page=1`)
     .then(response => response.json())
     .then(data => {
-        if(data){
+        if(data){ 
             var moviesList = [];
             var results = data.results.slice(0,100); //Get 100 mmovie IDs
             results.forEach(r => {
@@ -51,7 +51,7 @@ export class Home extends Component {
                 () => {
                   this.setState({movies: moviesList})
                 }, 1000
-            );  
+            );
         }
     })
     .catch(err => console.log(err));

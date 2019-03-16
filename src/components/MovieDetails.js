@@ -37,7 +37,7 @@ export class MovieDetails extends Component {
                         {movie.title}
                     </Typography>
                     <Typography component="p" className={classes.p}>
-                        {movie.genres.map(genre => (
+                        {movie.genres && movie.genres.map(genre => (
                             <p className={classes.genre}>{genre.name}</p>
                         ))}
                     </Typography>

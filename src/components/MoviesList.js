@@ -44,11 +44,10 @@ export class MoviesList extends Component {
     handleChange(e) {
         let currentList = [];
         let newList = [];
-
         if (e.target.value !== "") {
             currentList = this.props.movies;
             newList = currentList.filter(item => {
-                const lc = item.title.toLowerCase();
+                const lc = item.title? item.title.toLowerCase() : '';
                 const filter = e.target.value.toLowerCase();
                 return lc.includes(filter);
             });
